@@ -1,0 +1,1243 @@
+@import "~bootstrap/scss/functions";
+@import "./helpers/_variables";
+@import "./helpers/_grid";
+@import "./helpers/_text";
+@import "~bootstrap/scss/bootstrap";
+
+html {
+  overflow-y: scroll;
+}
+
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  list-style: none;
+}
+
+body {
+  width: 100%;
+  overflow: hidden;
+  font-family: "Segoe UI", "Microsoft JhengHei", sans-serif;
+}
+
+input[type='radio']:after {
+  width: 15px;
+  height: 15px;
+  border-radius: 15px;
+  top: -2px;
+  left: -1px;
+  position: relative;
+  background-color: #C4C4C4;
+  content: '';
+  display: inline-block;
+  visibility: visible;
+  border: 3px solid white;
+}
+
+input[type='radio']:checked:after {
+  width: 15px;
+  height: 15px;
+  border-radius: 15px;
+  top: -2px;
+  left: -1px;
+  position: relative;
+  background-color: #EA5514;
+  content: '';
+  display: inline-block;
+  visibility: visible;
+  border: 3px solid white;
+}
+
+.bg-cover {
+  background-size: cover;
+  background-position: center center;
+}
+
+.bg-left {
+  background-size: cover;
+  background-position: center left;
+}
+
+.bg-bottom {
+  background-size: 97%;
+  background-position: bottom center;
+  background-repeat: no-repeat;
+}
+
+.bg-bracelet {
+  background-size: 242%;
+  background-position: center center;
+  border-radius: 99em;
+}
+
+a,
+.remove-line-style {
+  text-decoration: none !important;
+}
+
+.remove-line-style {
+  @include phone {
+    color: #000 !important;
+    transition: all 0.3s;
+    padding: 15px 0 15px 0;
+    text-align: center;
+  }
+}
+
+.remove-line-style:hover {
+  @include phone {
+    background: #000;
+    color: #ffffff !important;
+  }
+}
+
+.line-through {
+  text-decoration: line-through;
+}
+
+.header {
+  background: linear-gradient(rgba(0, 0, 0, 1), rgba(128, 128, 128, 0));
+  background: -moz-linear-gradient(rgba(0, 0, 0, 1), rgba(128, 128, 128, 0));
+  background: -webkit-linear-gradient(rgba(0, 0, 0, 1), rgba(128, 128, 128, 0));
+  background: -o-linear-gradient(rgba(0, 0, 0, 1), rgba(128, 128, 128, 0));
+  z-index: 99;
+}
+
+.header-product {
+  z-index: 99;
+}
+
+.header-checkout {
+  background-color: #000;
+  z-index: 99;
+}
+
+.saved-link,
+.cart-link {
+  position: relative;
+}
+
+.saved-item-qty {
+  top: 15%;
+  right: 8%;
+}
+
+.cart-item-qty {
+  top: -15%;
+  right: 7%;
+
+  @include phone {
+    top: -5%;
+    right: 10%;
+  }
+}
+
+.saved-item-qty,
+.cart-item-qty {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  line-height: 15px;
+  z-index: 30;
+
+  @include phone {
+    width: 13px;
+    height: 13px;
+    line-height: 13px;
+  }
+}
+
+.dropdown-menu-cart:after {
+  content: '';
+  position: absolute;
+  top: -12px;
+  right: 13%;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 7.5px 13.0px 7.5px;
+  border-color: transparent transparent #ffffff transparent;
+}
+
+.dropdown-menu-cart {
+  position: absolute;
+  top: 16px !important;
+  left: -13% !important;
+}
+
+.menu {
+  @include phone {
+    max-height: 0px;
+    overflow: hidden;
+    transition: max-height 1s;
+    z-index: 99;
+    position: absolute;
+    top: 0px;
+    left: 0;
+    right: 0;
+    background: rgba($color: #fff, $alpha: 0.9);
+    display: block;
+  }
+}
+
+.brand-title {
+  height: 30px;
+  width: 192px;
+
+  @include phone {
+    height: 20px;
+    width: 128px;
+  }
+
+  @include iphone6-plus {
+    margin-right: 50px !important;
+  }
+
+  @include iphone6 {
+    margin-right: 40px !important;
+  }
+
+  @include iphone5 {
+    height: 18px;
+    width: 115px;
+    margin-right: 0px !important;
+  }
+}
+
+.showmenu {
+  @include phone {
+    display: block;
+  }
+}
+
+.menushow .menu {
+  max-height: 500px;
+}
+
+/*footer*/
+.sign-email a {
+  color: #000 !important;
+}
+
+.copyright {
+  @include phone {
+    font-size: 12px;
+  }
+}
+
+/*home*/
+.banner-normal,
+.banner-home {
+  position: relative;
+
+  @include pad {
+    height: 420px !important;
+  }
+
+  @include phone {
+    height: 280px !important;
+  }
+}
+
+.banner-normal h2,
+.banner-paysuccess h2,
+.banner-home h2 {
+  width: 70%;
+  right: 15%;
+
+  @include pad {
+    font-size: 50px;
+  }
+
+  @include phone {
+    font-size: 36px;
+    width: 90%;
+    right: 5%;
+  }
+
+  @include iphone5 {
+    font-size: 30px;
+  }
+}
+
+.banner-normal h2,
+.banner-paysuccess h2,
+.banner-home h2,
+.banner-home p {
+  position: absolute;
+  z-index: 5;
+}
+
+.banner-home h2 {
+  top: 40%;
+}
+
+.banner-home p {
+  top: 53%;
+  width: 30%;
+  margin: 0 35%;
+
+  @include pad {
+    top: 57%;
+    font-size: 16px;
+    width: 56%;
+    margin: 0 22%;
+  }
+
+  @include phone {
+    top: 60%;
+    width: 80%;
+    margin: 0 10%;
+    font-size: 12px;
+  }
+
+  @include iphone6 {
+    width: 84%;
+    margin: 0 8%;
+  }
+}
+
+.banner-normal h2,
+.banner-paysuccess h2 {
+  top: 45%;
+}
+
+.swiper-pagination-bullet {
+  background: #fff !important;
+}
+
+.swiper-button-next {
+  right: 20px !important;
+}
+
+.swiper-button-prev {
+  left: 20px !important;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  color: #fff !important;
+  z-index: 99 !important;
+}
+
+.flagship {
+  @include pad {
+    padding-right: 190px;
+  }
+
+  @include phone {
+    padding-right: 0;
+  }
+}
+
+.flagship-bottom .flagship {
+  @include phone {
+    padding-top: 1600px;
+  }
+
+  @include iphone5 {
+    padding-top: 1510px;
+  }
+}
+
+.flagship-top-img {
+  width: 370px;
+
+  @include pad {
+    width: 300px;
+  }
+
+  @include iphone5 {
+    width: 250px;
+  }
+}
+
+.flagship-bottom-img {
+  height: 400px;
+
+  @include pad {
+    height: 300px;
+  }
+
+  @include iphone5 {
+    height: 250px;
+  }
+}
+
+.flagship .text-gray05 {
+  font-size: 12px;
+
+  @include phone {
+    font-size: 8px;
+  }
+}
+
+.flagship h3 {
+  font-size: 36px;
+
+  @include pad {
+    font-size: 24px;
+  }
+
+  @include iphone5 {
+    font-size: 20px;
+  }
+}
+
+.flagship-title {
+  width: 420px;
+}
+
+.shop-buttom {
+  position: relative;
+}
+
+.short-line:after {
+  content: '';
+  position: absolute;
+  top: -30px;
+  left: 49%;
+  background: #000;
+  width: 2%;
+  height: 2px;
+
+  @include pad {
+    top: -20px;
+  }
+
+  @include phone {
+    top: -15px;
+  }
+}
+
+.flagship-card-top,
+.flagship-card-bottom {
+  position: relative;
+  width: 100%;
+}
+
+.flagship-card-top .product-card {
+  top: -400px;
+
+  @include pad {
+    top: -310px;
+  }
+
+  @include phone {
+    display: none;
+  }
+}
+
+.flagship-card-bottom .product-card {
+  top: -592px;
+
+  @include pad {
+    top: -445px;
+  }
+
+  @include phone {
+    display: none;
+  }
+}
+
+.product-card {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 180px;
+  z-index: 0;
+
+  @include phone {
+    position: static;
+    width: 100%;
+  }
+}
+
+.white-circle {
+  width: 82px;
+  height: 82px;
+  z-index: 1;
+  padding: 6px;
+  transition: width height 1s;
+
+  @include phone {
+    width: 160px;
+    height: 160px;
+    padding: 10px;
+  }
+
+  @include iphone5 {
+    width: 140px;
+    height: 140px;
+  }
+}
+
+.white-circle:hover {
+  width: 100px;
+  height: 100px;
+}
+
+.card-img {
+  width: 70px;
+  height: 70px;
+  z-index: 30;
+  transition: width height 1s;
+
+  @include phone {
+    width: 140px;
+    height: 140px;
+  }
+
+  @include iphone5 {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+.card-img:hover {
+  width: 88px;
+  height: 88px;
+}
+
+.card-title {
+  z-index: 30;
+  line-height: 24px;
+  font-size: 20px;
+
+  @include phone {
+    font-size: 24px;
+  }
+}
+
+.card-description {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+
+  @include phone {
+    overflow: visible;
+    text-overflow: inherit;
+    display: block;
+  }
+}
+
+.card-btn:hover {
+  border: 1px solid #727272;
+}
+
+.focus-look {
+  background-image: url(https://upload.cc/i1/2020/09/20/pF3YzP.jpg);
+  height: 1300px;
+  padding: 475px 310px 0 0;
+
+  @include pad {
+    height: 800px;
+    padding: 50px 20px 0 0;
+  }
+
+  @include phone {
+    height: 500px;
+    padding: 500px 0 0 0;
+  }
+}
+
+.focus-earring,
+.focus-braclet,
+.focus-necklace {
+  position: relative;
+}
+
+.focus-earring .product-card {
+  right: 600px;
+
+  @include pad {
+    right: 475px;
+    top: 370px;
+  }
+}
+
+.focus-braclet .product-card {
+  right: 600px;
+  top: 440px;
+
+  @include pad {
+    right: 0;
+    top: 370px;
+  }
+}
+
+/*products*/
+.banner-img {
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.products-category {
+  font-size: 18px;
+
+  @include pad {
+    font-size: 16px;
+  }
+
+  @include phone {
+    font-size: 14px;
+  }
+}
+
+.products-color {
+  width: 15px;
+  height: 15px;
+
+  @include pad {
+    width: 10px;
+    height: 10px;
+  }
+}
+
+.products-heart,
+.remove-saved {
+  font-size: 18px;
+
+  @include pad {
+    font-size: 16px;
+  }
+
+  @include phone {
+    font-size: 14px;
+  }
+
+  @include iphone6 {
+    font-size: 12px;
+  }
+
+  @include iphone5 {
+    font-size: 16px;
+  }
+}
+
+.products-img-necklace,
+.products-img-bracelet {
+  height: 300px;
+
+  @include pad {
+    height: 200px;
+  }
+
+  @include phone {
+    height: 170px;
+  }
+
+  @include iphone6 {
+    height: 150px;
+  }
+
+  @include iphone5 {
+    height: 200px;
+  }
+}
+
+.products-category-title {
+  font-size: 16px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+
+  @include pad {
+    font-size: 12px;
+    line-height: 20px;
+    -webkit-line-clamp: 2;
+  }
+
+  @include iphone6 {
+    font-size: 10px;
+  }
+
+  @include iphone5 {
+    font-size: 12px;
+  }
+}
+
+.products-category-price {
+  @include pad {
+    font-size: 14px;
+  }
+}
+
+.btn-add-bag {
+  @include pad {
+    font-size: 14px;
+  }
+
+  @include iphone6 {
+    font-size: 12px;
+  }
+
+  @include iphone5 {
+    font-size: 14px;
+  }
+}
+
+/*single product*/
+.banner-product {
+  position: relative;
+
+  @include pad {
+    height: 500px !important;
+  }
+
+  @include phone {
+    height: auto !important;
+  }
+}
+
+.model-img {
+  width: 45%;
+}
+
+.product-img {
+  width: 50%;
+
+  @include phone {
+    width: 100%;
+  }
+}
+
+.product-img-earring {
+  width: 45%;
+  margin-right: 15%;
+
+  @include phone {
+    width: 60%;
+    margin-right: 0;
+  }
+}
+
+.product-img-necklace {
+  width: 25%;
+  margin-right: 25%;
+
+  @include phone {
+    width: 45%;
+    margin-right: 0;
+  }
+}
+
+.product-img-bracelet {
+  width: 45%;
+  margin-right: 15%;
+
+  @include pad {
+    width: 55%;
+    margin-right: 7%;
+  }
+
+  @include phone {
+    width: 75%;
+    margin-right: 0;
+  }
+}
+
+.product-page-icon {
+  position: absolute;
+  right: 60px;
+  bottom: 40px;
+
+  @include pad {
+    right: 40px;
+    bottom: 20px;
+  }
+
+  @include phone {
+    right: 30px;
+    bottom: 105px;
+  }
+
+  @include iphone6 {
+    font-size: 14px;
+    bottom: 93px;
+  }
+}
+
+.product-page-card {
+  position: absolute;
+  top: 38%;
+  width: 24%;
+  left: 38%;
+  z-index: 5;
+
+  @include pad {
+    top: 33%;
+  }
+
+  @include phone {
+    position: static;
+    width: 100%;
+  }
+}
+
+.product-color {
+  width: 25px;
+  height: 25px;
+
+  @include pad {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.product-page-title {
+  font-size: 18px;
+  line-height: 28px;
+
+  @include pad {
+    font-size: 14px;
+    line-height: 24px;
+  }
+
+  @include iphone5 {
+    font-size: 12px;
+    line-height: 20px;
+  }
+}
+
+.product-page-price {
+  font-size: 18px;
+
+  @include pad {
+    font-size: 16px;
+  }
+
+  @include phone {
+    font-size: 18px;
+  }
+
+  @include iphone6 {
+    font-size: 14px;
+  }
+}
+
+.available {
+  @include pad {
+    font-size: 14px;
+  }
+}
+
+.product-page-add-btn button {
+  @include pad {
+    font-size: 12px;
+  }
+
+  @include iphone6-plus {
+    font-size: 16px;
+  }
+
+  @include iphone6 {
+    font-size: 14px;
+  }
+
+  @include iphone5 {
+    font-size: 12px;
+  }
+}
+
+.product-detail-img-earring {
+  width: 65%;
+}
+
+.product-detail-img-necklace {
+  width: 32%;
+}
+
+.product-detail-img-bracelet {
+  width: 62%;
+}
+
+.survice-detail h6 {
+  font-size: 14px;
+
+  @include pad {
+    font-size: 12px;
+  }
+
+  @include phone {
+    font-size: 14px;
+  }
+}
+
+.survice-detail h6:hover {
+  background: rgba($color: #fff, $alpha: 0.3);
+}
+
+.survice-detail h6.active {
+  font-weight: bold;
+}
+
+.survice-detail .survice-detail-content {
+  display: none;
+  font-size: 14px;
+
+  @include pad {
+    font-size: 12px;
+  }
+
+  @include phone {
+    font-size: 14px;
+  }
+}
+
+.product-details-text span {
+  @include pad {
+    font-size: 14px;
+  }
+
+  @include phone {
+    font-size: 16px;
+  }
+}
+
+.product-details-text p {
+  font-size: 14px;
+
+  @include pad {
+    font-size: 12px;
+  }
+
+  @include phone {
+    font-size: 14px;
+  }
+}
+
+.product-details-content {
+  white-space: pre-wrap;
+}
+
+.products-heart {
+  font-size: 16px;
+
+  @include pad {
+    font-size: 18px;
+  }
+}
+
+.recommend-title {
+  font-size: 14px;
+  line-height: 20px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+
+  @include pad {
+    -webkit-line-clamp: 1;
+  }
+}
+
+.recommend-large-earring {
+  width: 89%;
+
+  @include pad {
+    width: 100%;
+  }
+}
+
+.recommend-small-earring {
+  width: 76%;
+
+  @include pad {
+    width: 95%;
+  }
+}
+
+.recommend-necklace {
+  height: 220px;
+
+  @include pad {
+    height: 150px;
+  }
+}
+
+.recommend-bracelet {
+  width: 89%;
+}
+
+/*about*/
+.banner-short {
+  position: relative;
+
+  @include pad {
+    height: 300px !important;
+  }
+
+  @include phone {
+    height: auto !important;
+  }
+}
+
+.banner-short h2 {
+  position: absolute;
+  width: 100%;
+  top: 45%;
+  z-index: 5;
+
+  @include pad {
+    top: 55%;
+    font-size: 50px;
+  }
+
+  @include phone {
+    position: static;
+    padding-top: 110px;
+    font-size: 36px;
+    color: #000 !important;
+  }
+
+  @include iphone5 {
+    padding-top: 90px;
+    font-size: 30px;
+  }
+}
+
+.banner-short .bg-cover {
+  height: 100%;
+
+  @include phone {
+    margin: 30px 30px;
+    height: 150px !important;
+  }
+
+  @include iphone6 {
+    margin: 25px 25px;
+    height: 135px !important;
+  }
+
+  @include iphone5 {
+    margin: 20px 20px;
+    height: 120px !important;
+  }
+}
+
+.about-content {
+  padding: 90px 180px;
+
+  @include pad {
+    padding: 50px 80px;
+  }
+
+  @include phone {
+    padding: 20px 40px;
+    text-align: center;
+  }
+
+  @include iphone5 {
+    font-size: 12px;
+  }
+}
+
+/*saved*/
+.saved-img-necklace,
+.saved-img-bracelet {
+  height: 300px;
+
+  @include pad {
+    height: 140px;
+  }
+
+  @include phone {
+    height: 97px;
+  }
+
+  @include iphone5 {
+    height: 140px;
+  }
+}
+
+.have-not-saved {
+  @include phone {
+    font-size: 24px;
+  }
+
+  @include iphone6 {
+    font-size: 20px;
+  }
+}
+
+/*shopping bag*/
+.banner-shopbag {
+  position: relative;
+
+  @include pad {
+    height: 250px !important;
+  }
+
+  @include phone {
+    height: 200px !important;
+  }
+}
+
+.banner-shopbag h2 {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  z-index: 5;
+
+  @include pad {
+    top: 60%;
+    font-size: 50px;
+  }
+
+  @include phone {
+    top: 50%;
+    font-size: 36px;
+  }
+
+  @include iphone5 {
+    font-size: 30px;
+  }
+}
+
+.bag-img-large-earring {
+  width: 90%;
+
+  @include phone {
+    width: 60%;
+  }
+}
+
+.bag-img-small-earring {
+  width: 80%;
+
+  @include phone {
+    width: 55%;
+  }
+}
+
+.bag-img-necklace {
+  width: 45%;
+
+  @include phone {
+    width: 30%;
+  }
+}
+
+.bag-img-bracelet {
+  width: 90%;
+
+  @include phone {
+    width: 50%;
+  }
+}
+
+.bag-item-content p,
+.bag-item-content a {
+  font-size: 14px;
+}
+
+.bag-item-content p {
+  margin-bottom: 5px;
+}
+
+.bag-item-content .total-price {
+  @include phone {
+    font-size: 18px;
+  }
+}
+
+.summary-content p {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.summary-content .total-price {
+  font-size: 20px;
+}
+
+/*checkout*/
+.checkout-number {
+  width: 30px;
+  height: 30px;
+
+  @include iphone6 {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+.shipping-title .text-30,
+.payment-title .text-30 {
+  @include iphone6 {
+    font-size: 20px;
+  }
+}
+
+.shipping .text-14,
+.payment p {
+  @include iphone6 {
+    font-size: 12px;
+  }
+}
+
+.btn-checkout-pay {
+  @include phone {
+    width: 100%;
+  }
+}
+
+.btn-shop-more {
+  position: absolute;
+  width: 16%;
+  top: 65%;
+  right: 42%;
+
+  @include pad {
+    top: 55%;
+    width: 26%;
+    right: 37%;
+  }
+
+  @include phone {
+    width: 80%;
+    right: 10%;
+  }
+
+  @include iphone6 {
+    top: 60%;
+  }
+}
+
+/*cartcard*/
+.cart-card p {
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+
+.amount p {
+  line-height: 26px;
+}
+
+/*signin*/
+.banner-signin {
+  @include phone {
+    background-image: none !important;
+  }
+}
+
+/*welcome*/
+.welcome-card .product-card {
+  position: static !important;
+  width: 90% !important;
+
+  @include phone {
+    margin: 0 5%;
+  }
+}
