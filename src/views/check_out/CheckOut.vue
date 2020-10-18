@@ -200,7 +200,7 @@
                     </div>
                   </div>
                   <div class="text-left">
-                    <button type="button" class="btn-checkout-pay btn btn-black px-45 py-10">CONTINUE TO PAYMENT</button>
+                    <button type="submit" class="btn-checkout-pay btn btn-black px-45 py-10">CONTINUE TO PAYMENT</button>
                   </div>
                 </form>
               </div>
