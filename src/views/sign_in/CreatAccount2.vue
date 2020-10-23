@@ -7,7 +7,7 @@
       class="row pt-lg-200 pt-md-160 pt-110 pb-lg-65 pb-35 text-lighter justify-content-center align-items-center"
     >
       <div
-        class="col-lg-3 col-md-5 bg-md-transblack bg-black px-lg-35 px-20 py-lg-40 py-30 mx-25 mx-md-0"
+        class="col-xl-3 col-lg-4 col-md-5 bg-md-transblack bg-black px-lg-35 px-20 py-lg-40 py-30 mx-25 mx-md-0"
       >
         <h3 class="text-lighter pb-lg-30 pb-20 text-white">
           <a

@@ -47,7 +47,7 @@
       </div>
       <div class="product-page-card px-md-0 px-30">
         <div
-          class="product-page-title text-lighter text-gray05 px-lg-60 pb-10 border-bottom border-gray04"
+          class="product-page-title text-lighter text-gray05 px-xl-60 pb-10 border-bottom border-gray04"
         >
           {{ singleProduct.title }}
         </div>
@@ -97,7 +97,7 @@
           <div v-if="singleProduct.is_enabled === 1">AVAILABLE</div>
           <div v-else>UNAVAILABLE</div>
         </div>
-        <div class="product-page-add-btn mx-lg-30 pb-30 pb-md-0">
+        <div class="product-page-add-btn mx-xl-30 pb-30 pb-md-0">
           <button
             type="button"
             v-if="singleProduct.is_enabled === 1"

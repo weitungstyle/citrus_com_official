@@ -281,7 +281,10 @@ a,
   top: 53%;
   width: 30%;
   margin: 0 35%;
-
+  @include ipadpro{
+    width: 48%;
+    margin: 0 26%;
+  }
   @include pad {
     top: 57%;
     font-size: 16px;
@@ -556,7 +559,9 @@ a,
 
 .focus-earring .product-card {
   right: 600px;
-
+  @include desktop-below{
+    right: 67%;
+  }
   @include pad {
     right: 475px;
     top: 370px;
@@ -566,10 +571,21 @@ a,
 .focus-braclet .product-card {
   right: 600px;
   top: 440px;
-
+  @include desktop-below{
+    right: 67%;
+  }
   @include pad {
     right: 0;
     top: 370px;
+  }
+}
+
+.focus-necklace .product-card {
+  @include desktop-below{
+    right: -20%;
+  }
+  @include pad {
+    right: 0;
   }
 }
 
@@ -626,19 +642,18 @@ a,
 .products-img-necklace,
 .products-img-bracelet {
   height: 300px;
-
+  @include desktop-below{
+    height: 250px;
+  }
   @include pad {
     height: 200px;
   }
-
   @include phone {
     height: 170px;
   }
-
   @include iphone6 {
     height: 150px;
   }
-
   @include iphone5 {
     height: 200px;
   }
@@ -1048,15 +1063,18 @@ a,
 .saved-img-necklace,
 .saved-img-bracelet {
   height: 300px;
-
+  @include ipadpro{
+    height: 280px;
+  }
+  @include desktop-below{
+    height: 250px;
+  }
   @include pad {
     height: 140px;
   }
-
   @include phone {
     height: 97px;
   }
-
   @include iphone5 {
     height: 140px;
   }

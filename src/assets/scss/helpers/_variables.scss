@@ -176,9 +176,12 @@ $spacers: map-merge(
     85: 85px,
     90: 90px,
     95: 95px,
+    97: 97px,
     104: 104px,
+    106: 106px,
     110: 110px,
     120: 120px,
+    122: 122px,
     140: 140px,
     160: 160px,
     200: 200px,
@@ -239,7 +242,7 @@ $grid-breakpoints: (
   sm: 576px,
   md: 768px,
   lg: 992px,
-  xl: 1200px
+  xl: 1281px
 ) !default;
 
 @include _assert-ascending($grid-breakpoints, "$grid-breakpoints");

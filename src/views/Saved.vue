@@ -36,7 +36,7 @@
                   :src="item.imageUrl"
                   width="83%"
                   :alt="item.title"
-                  class="my-lg-84 my-md-40 my-28"
+                  class="my-xl-84 my-lg-97 my-md-40 my-28"
                 />
                 <img
                   v-else-if="
@@ -46,7 +46,7 @@
                   :src="item.imageUrl"
                   width="66%"
                   :alt="item.title"
-                  class="my-lg-104 my-md-49 my-35"
+                  class="my-xl-104 my-lg-106 my-md-49 my-35"
                 />
                 <img
                   v-else-if="item.title && item.title.indexOf('NECKLACE') != -1"
