@@ -58,7 +58,7 @@
                 'text-black': !item.product.coupon,
               }"
             >
-              {{ item.final_total | currency }}
+              {{ item.finalTotal | currency }}
             </p>
           </div>
         </div>

@@ -76,7 +76,7 @@
                 </div>
               </router-link>
               <div class="add-btn">
-                <div class="available-to-add" v-if="item.is_enabled == 1">
+                <div class="available-to-add" v-if="item.isEnabled == 1">
                   <button
                     type="button"
                     @click="addToCart(item.id)"
@@ -144,14 +144,17 @@ export default {
     },
     addToCart (id, qty = 1) {
       const vm = this
-      const api = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_CUSTOMPATH}/cart`
+      const api = `${process.env.VUE_APP_APIPATH}/api/cart`
       vm.isLoading = true
       const cart = {
-        product_id: id,
+        productId: id,
         qty
       }
       vm.$http.post(api, { data: cart }).then((response) => {
         vm.$bus.$emit('AddItem:getCart')
+      }).catch((error) => {
+        console.log('Saved.vue => ', api, error)
+      }).finally(() => {
         vm.isLoading = false
       })
     }

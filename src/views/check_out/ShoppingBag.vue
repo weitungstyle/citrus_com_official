@@ -150,19 +150,19 @@
               <p>Estimated Total</p>
               <p
                 class="total-price"
-                :class="{ 'line-through': cart.final_total !== cart.total }"
+                :class="{ 'line-through': cart.finalTotal !== cart.total }"
               >
                 {{ cart.total | currency }}
               </p>
             </div>
 
             <div
-              v-if="cart.final_total !== cart.total"
+              v-if="cart.finalTotal !== cart.total"
               class="d-flex justify-content-between align-items-end"
             >
               <p>Discounted Total</p>
               <p class="text-citrus total-price">
-                {{ cart.final_total | currency }}
+                {{ cart.finalTotal | currency }}
               </p>
             </div>
             <a @click="checkOut"
@@ -197,32 +197,41 @@ export default {
   methods: {
     getCart () {
       const vm = this
-      const api = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_CUSTOMPATH}/cart`
+      const api = `${process.env.VUE_APP_APIPATH}/api/cart`
       vm.isLoading = true
       vm.$http.get(api).then((response) => {
         vm.cart = response.data.data
+      }).catch((error) => {
+        console.log('ShoppingBag.vue => ', api, error)
+      }).finally(() => {
         vm.isLoading = false
       })
     },
     removeCartItem (id) {
       const vm = this
-      const api = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_CUSTOMPATH}/cart/${id}`
+      const api = `${process.env.VUE_APP_APIPATH}/api/cart/${id}`
       vm.isLoading = true
       vm.$http.delete(api).then(() => {
         vm.getCart()
-        vm.isLoading = false
         vm.$bus.$emit('RemoveItem:removeCartItem', (id))
+      }).catch((error) => {
+        console.log('ShoppingBag.vue => ', api, error)
+      }).finally(() => {
+        vm.isLoading = false
       })
     },
     addCouponCode () {
       const vm = this
-      const api = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_CUSTOMPATH}/coupon`
+      const api = `${process.env.VUE_APP_APIPATH}/api/coupon`
       const coupon = {
         code: vm.couponCode
       }
       vm.isLoading = true
       vm.$http.post(api, { data: coupon }).then((response) => {
         vm.getCart()
+      }).catch((error) => {
+        console.log('ShoppingBag.vue => ', api, error)
+      }).finally(() => {
         vm.isLoading = false
       })
     },
@@ -231,7 +240,7 @@ export default {
       const tempSaved = vm.saved.find(function (item) { return item.id === product.id }) || {}
       if (tempSaved.id === product.id) { return }
       vm.cart.carts.forEach(function (value) {
-        if (value.product_id === product.id) {
+        if (value.productId === product.id) {
           vm.saved.push(value.product)
         }
       })

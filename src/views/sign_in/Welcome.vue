@@ -43,29 +43,38 @@ export default {
   methods: {
     getFocusEarring () {
       const vm = this
-      const api = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_CUSTOMPATH}/product/${vm.Ids.focusEarringId}`
+      const api = `${process.env.VUE_APP_APIPATH}/api/product/${vm.Ids.focusEarringId}`
       vm.isLoading = true
       vm.$http.get(api).then((response) => {
-        vm.isLoading = false
         vm.focusEarring = response.data.product
+      }).catch((error) => {
+        console.log('Welcome.vue => ', api, error)
+      }).finally(() => {
+        vm.isLoading = false
       })
     },
     getFocusNecklace () {
       const vm = this
-      const api = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_CUSTOMPATH}/product/${vm.Ids.focusNecklaceId}`
+      const api = `${process.env.VUE_APP_APIPATH}/api/product/${vm.Ids.focusNecklaceId}`
       vm.isLoading = true
       vm.$http.get(api).then((response) => {
-        vm.isLoading = false
         vm.focusNecklace = response.data.product
+      }).catch((error) => {
+        console.log('Welcome.vue => ', api, error)
+      }).finally(() => {
+        vm.isLoading = false
       })
     },
     getFocusBracelet () {
       const vm = this
-      const api = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_CUSTOMPATH}/product/${vm.Ids.focusBraceletId}`
+      const api = `${process.env.VUE_APP_APIPATH}/api/product/${vm.Ids.focusBraceletId}`
       vm.isLoading = true
       vm.$http.get(api).then((response) => {
-        vm.isLoading = false
         vm.focusBracelet = response.data.product
+      }).catch((error) => {
+        console.log('Welcome.vue => ', api, error)
+      }).finally(() => {
+        vm.isLoading = false
       })
     }
   },

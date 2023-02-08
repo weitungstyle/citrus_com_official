@@ -255,29 +255,33 @@ export default {
   methods: {
     getCart () {
       const vm = this
-      const api = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_CUSTOMPATH}/cart`
+      const api = `${process.env.VUE_APP_APIPATH}/api/cart`
       vm.isLoading = true
       vm.$http.get(api).then((response) => {
         vm.cart = response.data.data
+      }).catch((error) => {
+        console.log('CheckOut.vue => ', api, error)
+      }).finally(() => {
         vm.isLoading = false
       })
     },
     createOrder () {
       const vm = this
-      const api = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_CUSTOMPATH}/order`
+      const api = `${process.env.VUE_APP_APIPATH}/api/order`
       const order = vm.form
-      vm.isLoading = true
       vm.$validator.validate().then((result) => {
         if (result) {
+          vm.isLoading = true
           vm.$http.post(api, { data: order }).then((response) => {
             if (response.data.success) {
               vm.$router.push(`/payment/${response.data.orderId}`)
               vm.$bus.$emit('AddItem:getCart')
             }
+          }).catch((error) => {
+            console.log('CheckOut.vue => ', api, error)
+          }).finally(() => {
             vm.isLoading = false
           })
-        } else {
-          vm.isLoading = false
         }
       })
     }

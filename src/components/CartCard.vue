@@ -74,11 +74,11 @@
           <p>{{ cartIn.total | currency }}</p>
         </div>
         <div
-          v-if="cartIn.final_total !== cartIn.total"
+          v-if="cartIn.finalTotal !== cartIn.total"
           class="d-flex justify-content-between"
         >
           <p>Discounted Total</p>
-          <p class="text-citrus">{{ cartIn.final_total | currency }}</p>
+          <p class="text-citrus">{{ cartIn.finalTotal | currency }}</p>
         </div>
       </div>
       <button type="button" disabled class="btn btn-gray02 btn-block">PLACE ORDER</button>

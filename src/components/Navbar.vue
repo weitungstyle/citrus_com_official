@@ -336,17 +336,22 @@ export default {
   methods: {
     getCart () {
       const vm = this
-      const api = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_CUSTOMPATH}/cart`
+      const api = `${process.env.VUE_APP_APIPATH}/api/cart`
       vm.$http.get(api).then((response) => {
         vm.cart = response.data.data
+      }).catch((error) => {
+        console.log('Navbar.vue => ', api, error)
       })
     },
     removeCartItem (id) {
       const vm = this
-      const api = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_CUSTOMPATH}/cart/${id}`
+      const api = `${process.env.VUE_APP_APIPATH}/api/cart/${id}`
       vm.isLoading = true
       vm.$http.delete(api).then(() => {
         vm.getCart()
+      }).catch((error) => {
+        console.log('Navbar.vue => ', api, error)
+      }).finally(() => {
         vm.isLoading = false
       })
     }

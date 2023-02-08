@@ -94,13 +94,13 @@
           </a>
         </div>
         <div class="available pb-lg-30 pb-md-20 pb-i6p-30 pb-20">
-          <div v-if="singleProduct.is_enabled === 1">AVAILABLE</div>
+          <div v-if="singleProduct.isEnabled === 1">AVAILABLE</div>
           <div v-else>UNAVAILABLE</div>
         </div>
         <div class="product-page-add-btn mx-xl-30 pb-30 pb-md-0">
           <button
             type="button"
-            v-if="singleProduct.is_enabled === 1"
+            v-if="singleProduct.isEnabled === 1"
             class="btn btn-black btn-block py-10"
             @click="addToCart(singleProduct.id, quantity)"
           >
@@ -331,31 +331,33 @@ export default {
   methods: {
     getSingleProduct (id) {
       const vm = this
-      const api = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_CUSTOMPATH}/product/${id}`
+      const api = `${process.env.VUE_APP_APIPATH}/api/product/${id}`
       vm.$http.get(api).then((response) => {
         vm.singleProduct = response.data.product
         vm.getRecommendProducts()
+      }).catch((error) => {
+        console.log('SingleProduct.vue => ', api, error)
       })
     },
     getRecommendProducts () {
       const vm = this
-      const api = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_CUSTOMPATH}/products/all`
+      const api = `${process.env.VUE_APP_APIPATH}/api/products/all`
 
       vm.recommendProducts = []
       vm.$http.get(api).then((response) => {
-        if (response.data.success) {
-          let tempProducts = []
-          tempProducts = response.data.products
-          tempProducts.forEach(function (item) {
-            if (item.category === vm.singleProduct.category) {
-              vm.tempCategoryProducts.push(item)
-            }
-          })
-          for (let i = 0; i < 4; i++) {
-            vm.recommendProducts.push(vm.tempCategoryProducts[i])
+        let tempProducts = []
+        tempProducts = response.data.products
+        tempProducts.forEach(function (item) {
+          if (item.category === vm.singleProduct.category) {
+            vm.tempCategoryProducts.push(item)
           }
+        })
+        for (let i = 0; i < 4; i++) {
+          vm.recommendProducts.push(vm.tempCategoryProducts[i])
         }
         vm.tempCategoryProducts = []
+      }).catch((error) => {
+        console.log('SingleProduct.vue => ', api, error)
       })
     },
     saveItem (product) {
@@ -386,14 +388,17 @@ export default {
     },
     addToCart (id, qty = 1) {
       const vm = this
-      const api = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_CUSTOMPATH}/cart`
+      const api = `${process.env.VUE_APP_APIPATH}/api/cart`
       vm.isLoading = true
       const cart = {
-        product_id: id,
+        productId: id,
         qty
       }
       vm.$http.post(api, { data: cart }).then((response) => {
         vm.$bus.$emit('AddItem:getCart')
+      }).catch((error) => {
+        console.log('SingleProduct.vue => ', api, error)
+      }).finally(() => {
         vm.isLoading = false
       })
     },
