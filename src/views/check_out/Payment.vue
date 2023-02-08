@@ -248,9 +248,9 @@ export default {
   methods: {
     getOrder () {
       const vm = this
-      const url = `${process.env.VUE_APP_APIPATH}/api/order/${vm.orderId}`
+      const api = `${process.env.VUE_APP_APIPATH}/api/order/${vm.orderId}`
       vm.isLoading = true
-      vm.$http.get(url).then((response) => {
+      vm.$http.get(api).then((response) => {
         vm.order = response.data.order
       }).catch((error) => {
         console.log('Payment.vue => ', api, error)
@@ -260,12 +260,12 @@ export default {
     },
     payOrder () {
       const vm = this
-      const url = `${process.env.VUE_APP_APIPATH}/api/pay/${vm.orderId}`
+      const api = `${process.env.VUE_APP_APIPATH}/api/pay/${vm.orderId}`
 
       vm.$validator.validate().then((result) => {
         if (result) {
           vm.isLoading = true
-          vm.$http.post(url).then((response) => {
+          vm.$http.post(api).then((response) => {
             if (response.data.success) {
               vm.getOrder()
               vm.$router.push('/payment_success')
