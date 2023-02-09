@@ -391,7 +391,7 @@ export default {
       const api = `${process.env.VUE_APP_APIPATH}/api/cart`
       vm.isLoading = true
       const cart = {
-        productId: id,
+        productId: _id,
         qty
       }
       vm.$http.post(api, { data: cart }).then((response) => {
