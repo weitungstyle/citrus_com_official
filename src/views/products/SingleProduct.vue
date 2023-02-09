@@ -419,6 +419,8 @@ export default {
   },
   created () {
     this.productId = this.$route.params.id
+    console.log(this.$route.params)
+    console.log(this.$route.params.id)
     this.getSingleProduct(this.productId)
   },
   watch: {
