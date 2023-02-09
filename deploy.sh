@@ -25,6 +25,6 @@ git commit -m 'deploy'
 # git push -f git@github.com:weitungstyle/citrus_com_official.git main:gh-pages
 # 除此之外，也可以改走 HTTPS 模式
 git remote add origin https://github.com/weitungstyle/citrus_com_official.git
-git push -f https://github.com/weitungstyle/citrus_com_official.git master:gh-pages
+git push -f https://github.com/weitungstyle/citrus_com_official.git main:gh-pages
 
 cd -
