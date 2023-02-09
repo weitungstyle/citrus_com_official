@@ -418,13 +418,13 @@ export default {
     }
   },
   created () {
-    this.productId = this.$route.params._id
+    this.productId = this.$route.params.id
     this.getSingleProduct(this.productId)
   },
   watch: {
     $route (to, from) {
-      this.productId = this.$route.params._id
-      this.getSingleProduct(to.params._id)
+      this.productId = this.$route.params.id
+      this.getSingleProduct(to.params.id)
       this.quantity = 1
     }
   }

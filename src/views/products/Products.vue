@@ -31,7 +31,7 @@
         <div
           class="col-md-4 col-i6-6 mb-lg-20 mb-md-15 mb-10 px-lg-10 px-md-7 px-5"
           v-for="item in products"
-          :key="item._id"
+          :key="item.id"
         >
           <div class="text-center bg-gray02 p-lg-35 p-i6p-20 p-i6-10 p-20">
             <div class="text-right">
@@ -41,7 +41,7 @@
                 @click.prevent="saveItem(item)"
               ></a>
             </div>
-            <router-link :to="`/product/${item._id}`">
+            <router-link :to="`/product/${item.id}`">
               <img
                 v-if="
                   item.title &&
@@ -93,7 +93,7 @@
               <div class="available-to-add" v-if="item.isEnabled">
                 <button
                   type="button"
-                  @click="addToCart(item._id)"
+                  @click="addToCart(item.id)"
                   class="btn-add-bag btn btn-gray02 btn-block font-weight-bold text-gray05 py-10"
                 >
                   <span class="d-md-inline-block d-i6-none"
@@ -174,7 +174,7 @@ export default {
       const vm = this
       const tempSaved =
         vm.saved.find(function (item) {
-          return item._id === product._id
+          return item.id === product._id
         }) || {}
       if (tempSaved._id === product._id) {
         return
