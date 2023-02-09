@@ -90,7 +90,7 @@
               </div>
             </router-link>
             <div class="add-btn">
-              <div class="available-to-add" v-if="item.isEnabled === 1">
+              <div class="available-to-add" v-if="item.isEnabled">
                 <button
                   type="button"
                   @click="addToCart(item.id)"
