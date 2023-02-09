@@ -94,13 +94,13 @@
           </a>
         </div>
         <div class="available pb-lg-30 pb-md-20 pb-i6p-30 pb-20">
-          <div v-if="singleProduct.isEnabled === 1">AVAILABLE</div>
+          <div v-if="singleProduct.isEnabled">AVAILABLE</div>
           <div v-else>UNAVAILABLE</div>
         </div>
         <div class="product-page-add-btn mx-xl-30 pb-30 pb-md-0">
           <button
             type="button"
-            v-if="singleProduct.isEnabled === 1"
+            v-if="singleProduct.isEnabled"
             class="btn btn-black btn-block py-10"
             @click="addToCart(singleProduct._id, quantity)"
           >
