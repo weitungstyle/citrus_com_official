@@ -1,5 +1,5 @@
 <template>
-  <router-link :to="`/product/${productIn.id}`" class="product-card d-block bg-gray01 p-md-30 p-i6-50 p-30 mb-10 mb-md-0 text-center">
+  <router-link :to="`/product/${productIn._id}`" class="product-card d-block bg-gray01 p-md-30 p-i6-50 p-30 mb-10 mb-md-0 text-center">
     <div class="card-top d-flex justify-content-center">
       <div class="white-circle rounded-circle bg-white"><div
         class="card-img"

@@ -20,7 +20,7 @@
               <div
                 class="row justify-content-between border-bottom border-gray03 mx-0 py-40"
                 v-for="item in cart.carts"
-                :key="item.id"
+                :key="item._id"
               >
                 <div class="col-md-3 text-center my-md-auto mb-40">
                   <img
@@ -62,7 +62,7 @@
                 </div>
                 <div class="col-md-5 bag-item-content">
                   <p class="pb-10">{{ item.product.title }}</p>
-                  <p>Style / {{ item.product.id }}</p>
+                  <p>Style / {{ item.product._id }}</p>
                   <p class="pb-5">Color/ {{ item.product.color }}</p>
                   <p class="d-md-none">QTY/ {{ item.qty }}</p>
                   <p class="mb-md-50">AVAILABLE</p>
@@ -74,7 +74,7 @@
                       <a
                         href="#"
                         class="text-black pr-10 border-right border-black"
-                        @click.prevent="removeCartItem(item.id)"
+                        @click.prevent="removeCartItem(item._id)"
                       >
                         Remove
                       </a>
@@ -237,10 +237,10 @@ export default {
     },
     saveItem (product) {
       const vm = this
-      const tempSaved = vm.saved.find(function (item) { return item.id === product.id }) || {}
-      if (tempSaved.id === product.id) { return }
+      const tempSaved = vm.saved.find(function (item) { return item._id === product._id }) || {}
+      if (tempSaved._id === product._id) { return }
       vm.cart.carts.forEach(function (value) {
-        if (value.productId === product.id) {
+        if (value.productId === product._id) {
           vm.saved.push(value.product)
         }
       })

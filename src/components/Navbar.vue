@@ -2,11 +2,11 @@
   <header
     class="container-fluid fixed-top pt-md-40 pt-30 px-5"
     :class="{
-      'header-product': $route.params.id,
+      'header-product': $route.params._id,
       'header-checkout': $route.params.orderId,
       'pb-md-40': $route.params.orderId,
       'pb-30': $route.params.orderId,
-      header: !$route.params.id && !$route.params.orderId,
+      header: !$route.params._id && !$route.params.orderId,
     }"
   >
     <loading :active.sync="isLoading"></loading>
@@ -17,15 +17,15 @@
             href="mailto:citrus.cwc@gmail.com"
             class="fas fa-envelope p-15"
             :class="{
-              'text-gray03': !$route.params.id,
-              'text-white': $route.params.id,
+              'text-gray03': !$route.params._id,
+              'text-white': $route.params._id,
             }"
           ></a>
           <span
             class="d-flex ml-15"
             :class="{
-              'text-gray03': !$route.params.id,
-              'text-white': $route.params.id,
+              'text-gray03': !$route.params._id,
+              'text-white': $route.params._id,
             }"
           >
             <i class="fas fa-phone"></i>
@@ -35,8 +35,8 @@
         <a
           class="showmenu d-md-none fas fa-bars text-i6p-20 p-15"
           :class="{
-            'text-gray03': !$route.params.id,
-            'text-gray05': $route.params.id,
+            'text-gray03': !$route.params._id,
+            'text-gray05': $route.params._id,
           }"
           href="#"
         ></a>
@@ -44,7 +44,7 @@
       <div class="col-md-4 col-6 px-0">
         <router-link
           to="/"
-          v-if="$route.params.id"
+          v-if="$route.params._id"
           class="text-hide bg-cover mx-i6p-auto brand-title d-block"
           style="
             background-image: url('https://upload.cc/i1/2020/09/24/DF0ZM8.png');
@@ -83,15 +83,15 @@
               <span
                 class="d-md-none fas fa-user p-15"
                 :class="{
-                  'text-gray03': !$route.params.id,
-                  'text-gray05': $route.params.id,
+                  'text-gray03': !$route.params._id,
+                  'text-gray05': $route.params._id,
                 }"
               ></span>
               <span
                 class="d-none d-md-block py-md-15"
                 :class="{
-                  'text-gray03': !$route.params.id,
-                  'text-gray05': $route.params.id,
+                  'text-gray03': !$route.params._id,
+                  'text-gray05': $route.params._id,
                 }"
                 >Sign in</span
               >
@@ -101,8 +101,8 @@
             <router-link
               class="far fa-heart p-15"
               :class="{
-                'text-gray03': !$route.params.id,
-                'text-gray05': $route.params.id,
+                'text-gray03': !$route.params._id,
+                'text-gray05': $route.params._id,
               }"
               to="/saved"
             ></router-link>
@@ -118,8 +118,8 @@
               to="/shopping_bag"
               class="p-15"
               :class="{
-                'text-gray03': !$route.params.id,
-                'text-gray05': $route.params.id,
+                'text-gray03': !$route.params._id,
+                'text-gray05': $route.params._id,
               }"
               ><i class="fas fa-shopping-cart"></i
             ></router-link>
@@ -134,8 +134,8 @@
             <a
               class="p-15"
               :class="{
-                'text-gray03': !$route.params.id,
-                'text-gray05': $route.params.id,
+                'text-gray03': !$route.params._id,
+                'text-gray05': $route.params._id,
               }"
               data-toggle="dropdown"
               data-flip="false"
@@ -162,7 +162,7 @@
                   <div
                     class="row border-bottom border-gray03 mx-0 py-15 text-12"
                     v-for="item in cart.carts"
-                    :key="item.id"
+                    :key="item._id"
                   >
                     <div class="col-md-4 text-center my-md-auto">
                       <img
@@ -214,7 +214,7 @@
                         <a
                           href="#"
                           class="text-black mr-10"
-                          @click.prevent="removeCartItem(item.id)"
+                          @click.prevent="removeCartItem(item._id)"
                         >
                           Remove
                         </a>
@@ -254,8 +254,8 @@
               class="remove-line-style d-block px-lg-25 px-15"
               to="/"
               :class="{
-                'text-white': !$route.params.id,
-                'text-black': $route.params.id,
+                'text-white': !$route.params._id,
+                'text-black': $route.params._id,
               }"
               >HOME</router-link
             >
@@ -265,8 +265,8 @@
               class="remove-line-style d-block px-lg-25 px-15"
               :to="`/products/EARRINGS`"
               :class="{
-                'text-white': !$route.params.id,
-                'text-black': $route.params.id,
+                'text-white': !$route.params._id,
+                'text-black': $route.params._id,
               }"
               >EARRINGS</router-link
             >
@@ -276,8 +276,8 @@
               class="remove-line-style d-block px-lg-25 px-15"
               :to="`/products/NECKLACES`"
               :class="{
-                'text-white': !$route.params.id,
-                'text-black': $route.params.id,
+                'text-white': !$route.params._id,
+                'text-black': $route.params._id,
               }"
               >NECKLACES</router-link
             >
@@ -287,8 +287,8 @@
               class="remove-line-style d-block px-lg-25 px-15"
               :to="`/products/BRACELETS`"
               :class="{
-                'text-white': !$route.params.id,
-                'text-black': $route.params.id,
+                'text-white': !$route.params._id,
+                'text-black': $route.params._id,
               }"
               >BRACELETS</router-link
             >
@@ -298,8 +298,8 @@
               class="remove-line-style d-block px-lg-25 px-15"
               to="/about"
               :class="{
-                'text-white': !$route.params.id,
-                'text-black': $route.params.id,
+                'text-white': !$route.params._id,
+                'text-black': $route.params._id,
               }"
               >ABOUT</router-link
             >
@@ -309,8 +309,8 @@
               class="remove-line-style d-block px-lg-25 px-15 d-md-none"
               to="/saved"
               :class="{
-                'text-white': !$route.params.id,
-                'text-black': $route.params.id,
+                'text-white': !$route.params._id,
+                'text-black': $route.params._id,
               }"
               >SAVED</router-link
             >

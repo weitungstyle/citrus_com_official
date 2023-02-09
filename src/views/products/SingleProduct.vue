@@ -102,7 +102,7 @@
             type="button"
             v-if="singleProduct.isEnabled === 1"
             class="btn btn-black btn-block py-10"
-            @click="addToCart(singleProduct.id, quantity)"
+            @click="addToCart(singleProduct._id, quantity)"
           >
             ADD TO SHOPPING BAG
           </button>
@@ -250,7 +250,7 @@
           <div
             class="col-md-3 col-i6-6 text-center"
             v-for="item in recommendProducts"
-            :key="item.id"
+            :key="item._id"
           >
             <div class="bg-gray02 p-lg-20 p-10">
               <div class="text-right">
@@ -260,7 +260,7 @@
                   @click.prevent="saveItem(item)"
                 ></a>
               </div>
-              <router-link :to="`/product/${item.id}`">
+              <router-link :to="`/product/${item._id}`">
                 <img
                   v-if="
                     item.title &&
@@ -298,7 +298,7 @@
             </h4>
             <span>{{ item.price | currency }}</span>
             <router-link
-              :to="`/product/${item.id}`"
+              :to="`/product/${item._id}`"
               class="py-10 btn btn-white btn-block text-lighter"
             >
               SHOP THIS
@@ -364,15 +364,15 @@ export default {
       const vm = this
       const tempSaved =
         vm.saved.find(function (item) {
-          return item.id === product.id
+          return item._id === product._id
         }) || {}
-      if (tempSaved.id === product.id) {
+      if (tempSaved._id === product._id) {
         return
-      } else if (product.id === vm.singleProduct.id) {
+      } else if (product._id === vm.singleProduct._id) {
         vm.saved.push(vm.singleProduct)
       } else {
         vm.recommendProducts.forEach(function (value) {
-          if (value.id === product.id) {
+          if (value._id === product._id) {
             vm.saved.push(value)
           }
         })
@@ -418,13 +418,13 @@ export default {
     }
   },
   created () {
-    this.productId = this.$route.params.id
+    this.productId = this.$route.params._id
     this.getSingleProduct(this.productId)
   },
   watch: {
     $route (to, from) {
-      this.productId = this.$route.params.id
-      this.getSingleProduct(to.params.id)
+      this.productId = this.$route.params._id
+      this.getSingleProduct(to.params._id)
       this.quantity = 1
     }
   }

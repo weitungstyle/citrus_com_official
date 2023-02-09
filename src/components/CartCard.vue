@@ -10,7 +10,7 @@
       <div
         class="row justify-content-between border-bottom border-gray03 py-20"
         v-for="item in cartIn.carts"
-        :key="item.id"
+        :key="item._id"
       >
         <div class="col-3 my-auto text-center">
           <img
@@ -48,7 +48,7 @@
         </div>
         <div class="col-7">
           <p>{{ item.product.title }}</p>
-          <p>Style / {{ item.product.id }}</p>
+          <p>Style / {{ item.product._id }}</p>
           <p>Color/ {{ item.product.color }}</p>
         </div>
         <div class="col-2 text-right">

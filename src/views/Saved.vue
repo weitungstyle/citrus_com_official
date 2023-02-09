@@ -17,7 +17,7 @@
           <div
             class="col-md-4 col-i6-6 mb-lg-20 mb-md-15 mb-10 px-lg-10 px-md-7 px-5"
             v-for="item in saved"
-            :key="item.id"
+            :key="item._id"
           >
             <div class="text-center bg-gray02 p-lg-35 p-i6p-20 p-i6-10 p-20">
               <div class="text-right">
@@ -27,7 +27,7 @@
                   @click.prevent="removeSaved(item)"
                 ></a>
               </div>
-              <router-link :to="`/product/${item.id}`">
+              <router-link :to="`/product/${item._id}`">
                 <img
                   v-if="
                     item.title &&
@@ -79,7 +79,7 @@
                 <div class="available-to-add" v-if="item.isEnabled == 1">
                   <button
                     type="button"
-                    @click="addToCart(item.id)"
+                    @click="addToCart(item._id)"
                     class="btn-add-bag btn btn-gray02 btn-block font-weight-bold text-gray05 py-10"
                   >
                     <span class="d-md-inline-block d-i6-none"
@@ -128,7 +128,7 @@ export default {
       const vm = this
       let newIndex = ''
       vm.saved.forEach(function (item, key) {
-        if (item.id === product.id) {
+        if (item._id === product._id) {
           newIndex = key
         }
       })
