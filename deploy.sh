@@ -24,7 +24,7 @@ git commit -m 'deploy'
 # 以這個專案來講就要改成這樣以下這樣，下面是走 ssh 模式
 # git push -f git@github.com:weitungstyle/citrus_com_official.git main:gh-pages
 # 除此之外，也可以改走 HTTPS 模式
-# git remote add origin https://github.com/weitungstyle/citrus_com_official.git
+git remote add origin https://github.com/weitungstyle/citrus_com_official.git
 git push -f https://github.com/weitungstyle/citrus_com_official.git master:gh-pages
 
 cd -
