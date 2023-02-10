@@ -167,47 +167,47 @@
                     <div class="col-md-4 text-center my-md-auto">
                       <img
                         v-if="
-                          item.product.title &&
-                          item.product.title.indexOf(
+                          item.productId.title &&
+                          item.productId.title.indexOf(
                             'LARGE VINTAGE EARRING'
                           ) !== -1
                         "
-                        :src="item.product.imageUrl"
+                        :src="item.productId.imageUrl"
                         class="bag-img-large-earring"
-                        :alt="item.product.title"
+                        :alt="item.productId.title"
                       />
                       <img
                         v-else-if="
-                          item.product.title &&
-                          item.product.title.indexOf(
+                          item.productId.title &&
+                          item.productId.title.indexOf(
                             'SMALL VINTAGE EARRING'
                           ) !== -1
                         "
-                        :src="item.product.imageUrl"
+                        :src="item.productId.imageUrl"
                         class="bag-img-small-earring"
-                        :alt="item.product.title"
+                        :alt="item.productId.title"
                       />
                       <img
                         v-else-if="
-                          item.product.title &&
-                          item.product.title.indexOf('NECKLACE') !== -1
+                          item.productId.title &&
+                          item.productId.title.indexOf('NECKLACE') !== -1
                         "
-                        :src="item.product.imageUrl"
+                        :src="item.productId.imageUrl"
                         class="bag-img-necklace"
-                        :alt="item.product.title"
+                        :alt="item.productId.title"
                       />
                       <img
                         v-else
-                        :src="item.product.imageUrl"
+                        :src="item.productId.imageUrl"
                         class="bag-img-bracelet"
-                        :alt="item.product.title"
+                        :alt="item.productId.title"
                       />
                     </div>
                     <div class="col-md-8">
-                      <p class="text-black mb-5">{{ item.product.title }}</p>
+                      <p class="text-black mb-5">{{ item.productId.title }}</p>
                       <p class="mb-5 text-gray05">Quantity: {{ item.qty }}</p>
                       <p class="mb-5 text-gray05">
-                        {{ item.product.price | currency }}
+                        {{ item.productId.price | currency }}
                       </p>
                       <div class="d-flex justify-content-between">
                         <p class="mb-5">AVAILABLE</p>
@@ -339,8 +339,6 @@ export default {
       const api = `${process.env.VUE_APP_APIPATH}/api/cart`
       vm.$http.get(api).then((response) => {
         vm.cart = response.data.data
-      }).catch((error) => {
-        console.log('Navbar.vue => ', api, error)
       })
     },
     removeCartItem (id) {
