@@ -78,7 +78,7 @@
           class="d-flex justify-content-end align-items-center"
           v-if="!$route.params.orderId"
         >
-          <li>
+          <!-- <li>
             <router-link to="/sign_in">
               <span
                 class="d-md-none fas fa-user p-15"
@@ -96,7 +96,7 @@
                 >Sign in</span
               >
             </router-link>
-          </li>
+          </li> -->
           <li class="d-md-block d-none saved-link">
             <router-link
               class="far fa-heart p-15"
