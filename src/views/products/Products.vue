@@ -7,21 +7,21 @@
         class="banner-img bg-cover"
         v-if="category === 'EARRINGS'"
         style="
-          background-image: url(https://upload.cc/i1/2020/09/20/sgr9KE.jpg);
+          background-image: url(https://firebasestorage.googleapis.com/v0/b/citruscom-a00c9.appspot.com/o/website%2Fsgr9KE.jpg?alt=media&token=468d6705-69fe-4a8d-8fff-ae686023451c);
         "
       ></div>
       <div
         class="banner-img bg-cover"
         v-else-if="category === 'NECKLACES'"
         style="
-          background-image: url(https://upload.cc/i1/2020/09/20/GEmIny.jpg);
+          background-image: url(https://firebasestorage.googleapis.com/v0/b/citruscom-a00c9.appspot.com/o/website%2FGEmIny.jpg?alt=media&token=02a02a19-82b6-4dc8-b3de-2aa95032396d);
         "
       ></div>
       <div
         class="banner-img bg-cover"
         v-else
         style="
-          background-image: url(https://upload.cc/i1/2020/09/20/bpaJSF.jpg);
+          background-image: url(https://firebasestorage.googleapis.com/v0/b/citruscom-a00c9.appspot.com/o/website%2FbpaJSF.jpg?alt=media&token=adfacecb-a8fc-4a28-8c59-d8423e809f02);
         "
       ></div>
     </div>

@@ -6,7 +6,7 @@
       <div
         class="banner-img bg-cover"
         style="
-          background-image: url(https://upload.cc/i1/2020/09/20/DmqOgW.jpg);
+          background-image: url(https://firebasestorage.googleapis.com/v0/b/citruscom-a00c9.appspot.com/o/website%2FDmqOgW.jpg?alt=media&token=a3c64cc6-84f7-49b8-8590-1d1632d4e944);
         "
       ></div>
     </div>

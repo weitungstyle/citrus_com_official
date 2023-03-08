@@ -6,7 +6,7 @@
     >
       <h2 class="text-center text-80 text-white text-lighter">{{`WELCOME, ${user.firstName} ${user.lastName}`}}</h2>
       <div class="bg-cover" style="
-        background-image: url(https://upload.cc/i1/2020/09/20/BLckxI.jpg);
+        background-image: url(https://firebasestorage.googleapis.com/v0/b/citruscom-a00c9.appspot.com/o/website%2FBLckxI.jpg?alt=media&token=0e21744f-9ce7-4da3-b510-5f1d4e26e907);
       "></div>
     </div>
     <div class="container py-lg-50 py-md-30 py-10 welcome-card">

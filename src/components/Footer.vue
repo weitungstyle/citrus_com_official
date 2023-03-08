@@ -50,7 +50,7 @@
         </div>
       </div>
       <div class="row flex-row-reverse justify-content-between align-items-end">
-        <img class="footer-img col-lg-4 col-md-5" src="https://upload.cc/i1/2020/09/19/p9iBNb.png" alt="logo of citrus shop">
+        <img class="footer-img col-lg-4 col-md-5" src="https://firebasestorage.googleapis.com/v0/b/citruscom-a00c9.appspot.com/o/website%2Fp9iBNb.png?alt=media&token=100d5022-648b-479a-8724-be1b06257444" alt="logo of citrus shop">
         <div class="copyright col-lg-8 col-md-7 text-gray05 text-14 pt-md-0 pt-20">© 2020 Citrus  Chen Accessory - All Rights Reserved</div>
       </div>
     </div>

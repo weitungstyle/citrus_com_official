@@ -11,31 +11,31 @@
           <div
             class="swiper-slide bg-cover"
             style="
-              background-image: url(https://upload.cc/i1/2020/09/20/nSeM9J.jpg);
+              background-image: url(https://firebasestorage.googleapis.com/v0/b/citruscom-a00c9.appspot.com/o/website%2FnSeM9J.jpg?alt=media&token=0b941809-8054-4f2b-a681-ee1619bf7f31);
             "
           ></div>
           <div
             class="swiper-slide bg-cover"
             style="
-              background-image: url(https://upload.cc/i1/2020/09/20/DmqOgW.jpg);
+              background-image: url(https://firebasestorage.googleapis.com/v0/b/citruscom-a00c9.appspot.com/o/website%2FDmqOgW.jpg?alt=media&token=a3c64cc6-84f7-49b8-8590-1d1632d4e944);
             "
           ></div>
           <div
             class="swiper-slide bg-cover"
             style="
-              background-image: url(https://upload.cc/i1/2020/09/20/DHvPEr.jpg);
+              background-image: url(https://firebasestorage.googleapis.com/v0/b/citruscom-a00c9.appspot.com/o/website%2FDHvPEr.jpg?alt=media&token=1b0a8994-9ac6-48d9-a740-1e05444b3e14);
             "
           ></div>
           <div
             class="swiper-slide bg-cover"
             style="
-              background-image: url(https://upload.cc/i1/2020/09/20/Xteh0I.jpg);
+              background-image: url(https://firebasestorage.googleapis.com/v0/b/citruscom-a00c9.appspot.com/o/website%2FXteh0I.jpg?alt=media&token=55ceef90-6f5c-403d-a87e-7fc9c6d98c59);
             "
           ></div>
           <div
             class="swiper-slide bg-cover"
             style="
-              background-image: url(https://upload.cc/i1/2020/09/20/MEn6zd.jpg);
+              background-image: url(https://firebasestorage.googleapis.com/v0/b/citruscom-a00c9.appspot.com/o/website%2FMEn6zd.jpg?alt=media&token=4f323538-1107-47e0-b1bc-33f33886d68b);
             "
           ></div>
         </div>
@@ -126,11 +126,16 @@ export default {
       focusNecklace: {},
       focusBracelet: {},
       Ids: {
-        flagshipTopId: '-MGgNpIedqYw63kt0otn',
-        flagshipBottomId: '-MHFoH2b1s9pqxBb0MBu',
-        focusEarringId: '-MGgNSdA36SAz8eV5var',
-        focusNecklaceId: '-MGgOEpr5qWE276na-6M',
-        focusBraceletId: '-MHFp4lauOHAGd9a8pe1'
+        flagshipTopId: '6400d9934724f3685a5002c0',
+        flagshipBottomId: '6400d9934724f3685a5002c8',
+        focusEarringId: '6400d9934724f3685a5002be',
+        focusNecklaceId: '6400d9934724f3685a5002c2',
+        focusBraceletId: '6400d9934724f3685a5002ca'
+        // flagshipTopId: '-MGgNpIedqYw63kt0otn',
+        // flagshipBottomId: '-MHFoH2b1s9pqxBb0MBu',
+        // focusEarringId: '-MGgNSdA36SAz8eV5var',
+        // focusNecklaceId: '-MGgOEpr5qWE276na-6M',
+        // focusBraceletId: '-MHFp4lauOHAGd9a8pe1'
       },
       isLoading: false
     }

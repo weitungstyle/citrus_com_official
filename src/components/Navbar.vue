@@ -47,7 +47,7 @@
           v-if="$route.params.id"
           class="text-hide bg-cover mx-i6p-auto brand-title d-block"
           style="
-            background-image: url('https://upload.cc/i1/2020/09/24/DF0ZM8.png');
+            background-image: url('https://firebasestorage.googleapis.com/v0/b/citruscom-a00c9.appspot.com/o/website%2FDF0ZM8.png?alt=media&token=60f9fcd9-05b7-4bd7-80a4-06a564420057');
           "
         >
           CITRUS
@@ -57,7 +57,7 @@
           v-else-if="$route.params.orderId"
           class="text-hide bg-cover mx-i6p-auto brand-title d-block"
           style="
-            background-image: url('https://upload.cc/i1/2020/09/19/9cNkyP.png');
+            background-image: url('https://firebasestorage.googleapis.com/v0/b/citruscom-a00c9.appspot.com/o/website%2F9cNkyP.png?alt=media&token=e8403e5b-2880-4061-8950-f06bc2f3e883');
           "
         >
           CITRUS
@@ -67,7 +67,7 @@
           v-else
           class="text-hide bg-cover mx-i6p-auto brand-title d-block"
           style="
-            background-image: url('https://upload.cc/i1/2020/09/19/9cNkyP.png');
+            background-image: url('https://firebasestorage.googleapis.com/v0/b/citruscom-a00c9.appspot.com/o/website%2F9cNkyP.png?alt=media&token=e8403e5b-2880-4061-8950-f06bc2f3e883');
           "
         >
           CITRUS

@@ -1,7 +1,7 @@
 <template>
   <div
     class="banner-signin"
-    style="background-image: url(https://upload.cc/i1/2020/09/20/ogHAsu.jpg)"
+    style="background-image: url(https://firebasestorage.googleapis.com/v0/b/citruscom-a00c9.appspot.com/o/website%2FogHAsu.jpg?alt=media&token=9cc86114-358b-4261-ad43-8ca91a699ce2)"
   >
     <div
       class="row pt-lg-200 pt-md-160 pt-110 pb-lg-65 pb-35 text-lighter justify-content-center align-items-center"
